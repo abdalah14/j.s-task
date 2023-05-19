@@ -1,0 +1,19 @@
+var allproducts = document.querySelectorAll(".list li");
+var content = document.querySelector("#content");
+var btn = document.querySelector("#btn1");
+var totalPrice = 0
+
+allproducts.forEach(function(item){
+    item.onclick = function(){
+        totalPrice += Number(item.getAttribute("price"))
+        content.innerHTML += item.textContent + " "
+
+        if ( content.innerHTML != ""){
+            btn.style.display = "block"
+        }
+    }
+}
+)
+btn.onclick = function(){
+    console.log(totalPrice)
+}
